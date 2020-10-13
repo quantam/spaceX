@@ -1,0 +1,21 @@
+<aside class="col-2 filter">
+  Filters
+  <p class="filter-header">Launch Here</p>
+  <div class="row">
+     <div *ngFor="let launch of launchYear" class="col-3 tag"
+     (click)="filterData('launch_year', launch)"
+     [class.active] = 'launch === params?.launch_year'>
+       {{launch}}
+      </div>
+  </div>
+  <p class="filter-header">Successful Launch</p>
+  <div class="row">
+     <div class="col-3 tag" (click)="filterData('launch_success', true)" [class.active] = 'params?.launch_success'>True</div>
+     <div class="col-3 tag" (click)="filterData('launch_success', false)" [class.active] = 'params?.launch_success === false'>False</div>
+  </div>
+  <p class="filter-header">Successful Landing</p>
+  <div class="row">
+    <div class="col-3 tag" (click)="filterData('launch_landing', true)" [class.active] = 'params?.launch_landing'>True</div>
+    <div class="col-3 tag" (click)="filterData('launch_landing', false)" [class.active] = 'params?.launch_landing'>False</div>
+  </div>
+</aside>

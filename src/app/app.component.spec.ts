@@ -24,12 +24,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('spaceX');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('spaceX app is running!');
+    expect(app.headerTitle).toEqual('SpaceX Launch Programs');
+    expect(app.developerName).toEqual('Santu Rana');
   });
 });

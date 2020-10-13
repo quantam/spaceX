@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spaceX';
+  headerTitle = 'SpaceX Launch Programs';
+  developerName = 'Santu Rana';
 }
