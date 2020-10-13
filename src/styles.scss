@@ -18,17 +18,21 @@ body {
   margin-bottom: 7px;
   padding: 10px;
 }
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
-
+.row > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
 [class*="col-"] {
   float: left;
   padding: 10px;
 }
-
+.clearFix {
+  clear: both;
+}
 .card {
   font-size: 13px;
   padding: 5px;

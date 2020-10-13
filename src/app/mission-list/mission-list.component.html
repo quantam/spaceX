@@ -1,27 +1,28 @@
 
 <app-filter></app-filter>
 
-<!-- <app-tile></app-tile> -->
-<section class="col-9 col-md-9 row">
+<section class="col-9 col-md-12 row">
   <div class="no-data" *ngIf="(missionInfo$|async)?.length ===0"> No Mission Found</div>
   <div *ngFor="let mission of missionInfo$|async" class="card col-3 col-md-6">
     <img src={{mission?.links?.mission_patch_small}} class="img-responsive"/>
     <div class="header"> {{mission?.mission_name}} #{{mission.flight_number}}</div>
     <div class="row">
       <div class="col-5 label col-md-5">Mission Ids:</div>
-      <div class="col-4 col-md-4"></div>
+      <div class="col-4 col-md-4" *ngFor="let id of mission?.mission_id">
+        {{id}}
+      </div>
     </div>
     <div class="row">
       <div class="col-5 label col-md-5">Launch Year:</div>
-      <div class="col-4 col-md-4">{{mission.launch_year}}</div>
+      <div class="col-4 col-md-4">{{mission?.launch_year}}</div>
     </div>
     <div class="row">
       <div class="col-5 label col-md-5">Successfull Launch:</div>
-      <div class="col-4 col-md-4">{{mission.launch_success}}</div>
+      <div class="col-4 col-md-4">{{mission?.launch_success}}</div>
     </div>
     <div class="row">
       <div class="col-5 label col-md-5">Successfull Landing:</div>
-      <div class="col-4 col-md-4">{{mission.launch_landing}}</div>
+      <div class="col-4 col-md-4">{{mission?.launch_landing}}</div>
     </div>
   </div>
 </section>
